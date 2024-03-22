@@ -34,7 +34,7 @@ h1 {
     background: #222222;
 }
 
- .btn:active {
+.btn:active {
     transform: scale(0.98)
  }
  .rules{
