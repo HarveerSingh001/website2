@@ -170,6 +170,8 @@ function update() {
     draw()
     requestAnimationFrame(update)
 }
+const startButton = document.getElementById('start-btn');
+const restartButton = document.getElementById('restart-btn');
 
 update()
 
@@ -181,6 +183,18 @@ function keyDown(e) {
     if (e.key == 'ArrowLeft' || e.key == 'Left' || e.key == 'a') {
         paddle.dx = -paddle.speed
     }
+    
+startButton.addEventListener('click', () => {
+    if (gamePaused) {
+        gamePaused = false;
+        startButton.style.display = 'none';
+        requestAnimationFrame(update);
+    }
+});
+
+restartButton.style.display = 'none';
+
+document.body.appendChild(restartButton);
 }
 
 function keyUp(e) {
