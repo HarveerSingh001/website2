@@ -1,2 +1,2 @@
 const screens = document.querySelectorAll('.screen')
-const choose_insects_btns = document.querySelectorAll('.choose)
+const choose_insects_btns = document.querySelectorAll('.choose-insect-btn')
