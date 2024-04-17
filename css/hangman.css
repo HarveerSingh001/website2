@@ -1,5 +1,6 @@
 *body{
-
+background-color: #34495e;
+color: #ffffff;
 }
 
 .figure-container{
@@ -11,5 +12,5 @@
 }
 .figure-part{
     display: none;
-    
+
 }
