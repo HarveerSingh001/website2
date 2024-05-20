@@ -13,6 +13,7 @@ h1 {
 
 /* Links */
 a {
+    color: violet;
     display: block;
     width: 200px;
     margin: 20px auto;
