@@ -7,88 +7,57 @@
     <link rel="stylesheet" href="css/insect.css">
 </head>
 <body>
-    <div class = "screen">
+    <div class="screen">
         <h1>Catch The Insect</h1>
-        <button class = "btn" id = "start-btn">Play Game</button>
+        <button class="btn" id="start-btn">Play Game</button>
     </div>
 
-    <div class = "screen">
-        <h1>What is your favorite insect?</h1>
-        <ul class = "insects-list">
-            <li>
-                <button class = "choose-insect-btn">
-                    <p>fly</p>
-                    <img src = "images/fly.png" alt = "fly">
-                </button>
-            </li><li>
-                <button class = "choose-insect-btn">
-                    <p>mosquito</p>
-                    <img src = "images/mosquito.png" alt = "mosquito">
-                </button>
-            </li>
-            <li>
-                <button class = "choose-insect-btn">
-                    <p>ant</p>
-                    <img src = "images/ant.png" alt = "ant">
-                </button>
-            </li>
-            <li>
-                <button class = "choose-insect-btn">
-                    <p>spider</p>
-                    <img src = "images/spider.png" alt = "spider">
-                </button>
-            </li>
-        </ul>
-    </div>
-    <div class="screen game-container" id="game-container">
-        <h3 class="time" id="time">
-            time: 00:00</h3>
-            <h3 id="score" class="score">Score: 0</h3>
-        <h5 id="message" class="message">
-            Are you annoyed yet? <br>
-            You are playing an impossible game!!
-        </h5>
-
-        <h1 id="W" class="message">
-            You Win!!
-        </h1>
-
-        <h2 id="L" class="message">
-            You Lose!!
-        </h2>
-
-        <h5 id="winning" class="message">You won! <br>
-        You caught 60 insects in under 30 seconds! <br>
-        Keep playing if you want to!
-        </h5>
-    </div>
-</body>
-<script src= "js/insect.js"></script>
-</html>
-
+    <div class="screen">
+        <h1>What is your "favorite" insect?</h1>
+        <ul class="insects-list">
             <li>
                 <button class="choose-insect-btn">
-                    <p>Ant</p>
-                    <img src="images/ant.png" alt ="ant">
+                    <p>Fly</p>
+                    <img src="images/fly.png" alt="fly">
                 </button>
             </li>
-
+            <li>
+                <button class="choose-insect-btn">
+                    <p>Mosquito</p>
+                    <img src="images/mosquito.png" alt="mosquito">
+                </button>
+            </li>
             <li>
                 <button class="choose-insect-btn">
                     <p>Spider</p>
-                    <img src="images/spider.png" alt ="spider">
+                    <img src="images/spider.png" alt="spider">
+                </button>
+            </li>
+            <li>
+                <button class="choose-insect-btn">
+                    <p>Roach</p>
+                    <img src="images/cockroach.png" alt="roach">
                 </button>
             </li>
         </ul>
     </div>
 
     <div class="screen game-container" id="game-container">
-        <h3 class ="time" id="time">Time: 00:00</h3>
+        <h3 class="time" id="time">Time: 00:00</h3>
         <h3 id="score" class="score">Score: 0</h3>
-        <h5 id="message" class="message">Are you annoyed yet? <br>
-            You are playing an impossible game. </h5>
-
+        <h5 id="message" class="message ">
+            Are you annoyed yet? <br>
+            You are playing an impossible game.
+        </h5>
+        <h7 id="message2" class="message2 ">
+            You won! Congratulations!
+        </h7>
+        <h9 id="message3" class="message3">
+            You Lost! You're infested!
+        </h9>
     </div>
+
+
 </body>
-<script src ="js/insect.js"></script>
+<script src="js/insect.js"></script>
 </html>
