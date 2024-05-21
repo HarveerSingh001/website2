@@ -9,7 +9,7 @@ score = 0
 brickRowCount = 9
 brickColumnCount = 5
 
-// Create ball properties
+
 ball = {
     x: canvas.width / 2,
     y: canvas.height / 2,
@@ -19,7 +19,7 @@ ball = {
     dy: 0,
 }
 
-// Create paddle properties
+
 paddle = {
     x: canvas.width / 2 - 40,
     y: canvas.height - 20,
@@ -29,7 +29,7 @@ paddle = {
     dx: 0,
 }
 
-//Create brick properties
+
 brickInfo = {
     w: 70,
     h: 20,
@@ -39,7 +39,7 @@ brickInfo = {
     visible: true,
 }
 
-// Create bricks
+
 bricks = []
 for (let i = 0; i < brickRowCount; i++) {
     bricks[i] = []
@@ -50,7 +50,7 @@ for (let i = 0; i < brickRowCount; i++) {
     }
 }
 
-// Draw ball on canvas
+
 function drawBall() {
     ctx.beginPath()
     ctx.arc(ball.x, ball.y, ball.size, 0, Math.PI * 2)
@@ -58,8 +58,6 @@ function drawBall() {
     ctx.fill()
     ctx.closePath()
 }
-
-// Draw paddle on canvas
 function drawPaddle() {
     ctx.beginPath()
     ctx.rect(paddle.x, paddle.y, paddle.w, paddle.h)
@@ -69,14 +67,12 @@ function drawPaddle() {
 }
 
 
-// Draw score on canvas
+
 function drawScore() {
     ctx.font = '20px Arial'
     ctx.fillText(`Score: ${score}`, canvas.width-100, 30)
 }
 
-
-//Draw bricks on canvas
 function drawBricks() {
     bricks.forEach(column => {
         column.forEach(brick => {
@@ -91,7 +87,7 @@ function drawBricks() {
 
 
 
-//Draw everything
+
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     drawPaddle()
@@ -100,11 +96,11 @@ function draw() {
     drawBricks()
 }
 
-// Move paddle on canvas
+
 function movePaddle() {
     paddle.x = paddle.x + paddle.dx
 
-    // wall dectection
+
     if (paddle.x < 0 ) (
         paddle.x = 0
     )
@@ -113,10 +109,10 @@ function movePaddle() {
     }
 }
 
-// Keydown Event
+
 function keyDown(e) {
 
-    // console.log(e.key)
+
     if (e.key == 'ArrowRight' || e.key == 'Right') {
         paddle.dx = paddle.speed
     }
@@ -149,7 +145,6 @@ function keyDown(e) {
      }
 }
 
-//Keyup event
 function keyUp(e) {
     if (e.key == 'ArrowRight' || e.key == 'Right' || e.key == 'ArrowLeft' || ekey == 'Left') {
         paddle.dx = 0
@@ -161,30 +156,27 @@ function moveBall() {
     ball.x = ball.x + ball.dx
     ball.y = ball.y + ball.dy
 
-    // wall collision (top)
     if (ball.y + ball.size < 0) {
         ball.dy = -1 * ball.dy
     }
 
-    // wall collision (right)
+
     if (ball.x + ball.size > canvas.width) {
         ball.dx = -1 * ball.dx
     }
 
-    // wall collision (bottom)
     if (ball.y + ball.size > canvas.height) {
         ball.dy = 0
         ball.dx = 0
         paddle.dx = 0
     }
 
-    //wall collision (left)
     if (ball.x + ball.size < 0)
     {
         ball.dx = -1 * ball.dx
     }
 
-    //paddle collision
+
     if (
         ball.x - ball.size > paddle.x  &&
         ball.x + ball.size < paddle.x + paddle.w &&
@@ -193,7 +185,7 @@ function moveBall() {
         ball.dy = -1 * ball.speed
     }
 
-    //Brick collision
+
     bricks.forEach(column => {
         column.forEach(brick => {
             if (brick.visible) {
@@ -212,9 +204,8 @@ function moveBall() {
     })
 }
 
-//increase score
 function increaseScore() {
-    score++ // score = score + 1
+    score++
     if (score == brickRowCount * brickColumnCount) {
         score = 0
         showAllBricks()
@@ -235,13 +226,11 @@ function showAllBricks() {
     })
 }
 
-//Keyboard event handlers
+
 document.addEventListener('keydown', keyDown)
 document.addEventListener('keyup', keyUp)
 
 
-
-//Update the canvas drawing and animation
 function update() {
     moveBall()
     movePaddle()
